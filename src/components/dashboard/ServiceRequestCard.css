@@ -1,0 +1,233 @@
+.service-request-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 1.75rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-request-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+.service-request-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.request-header {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.request-service-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+.request-info {
+    flex: 1;
+}
+
+.request-id {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0 0 0.35rem 0;
+    font-family: 'Courier New', monospace;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.request-service-name {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-weight: 600;
+}
+
+.request-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.detail-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+.detail-value {
+    color: var(--color-text-primary);
+    font-weight: 700;
+}
+
+.request-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 2px solid;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.expected-time {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.expected-time::before {
+    content: '⏱';
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .service-request-card {
+        padding: 1.5rem;
+    }
+
+    .request-service-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .request-id {
+        font-size: 0.95rem;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
+.service-request-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.request-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.request-service-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.request-info {
+    flex: 1;
+}
+
+.request-id {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 0.25rem 0;
+    font-family: 'Courier New', monospace;
+}
+
+.request-service-name {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.request-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.detail-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.detail-value {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.request-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid;
+}
+
+.expected-time {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .service-request-card {
+        padding: 1rem;
+    }
+
+    .request-service-icon {
+        width: 40px;
+        height: 40px;
+    }
+}

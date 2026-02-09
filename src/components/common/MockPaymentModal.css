@@ -1,0 +1,255 @@
+/* MockRazorpay.css */
+.mock-razorpay-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mock-razorpay-modal {
+  background-color: #f5f7fa;
+  width: 900px; /* Wider for 2-column layout */
+  height: 600px;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+}
+
+/* Left Sidebar - Payment Methods */
+.mock-razorpay-sidebar {
+  width: 320px;
+  background-color: white;
+  border-right: 1px solid #e0e4eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.mock-razorpay-header {
+  padding: 24px;
+  border-bottom: 2px solid #3395ff; /* Active indicator style */
+}
+
+.mock-razorpay-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #0d1620;
+  font-weight: 600;
+}
+
+.payment-methods-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.payment-method-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.payment-method-item:hover {
+  background-color: #f5f7fa;
+}
+
+.payment-method-item.active {
+  background-color: #eef5ff;
+  border-left: 4px solid #3395ff;
+}
+
+.method-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3395ff;
+}
+
+.method-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.method-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3e4b5b;
+}
+
+.method-subtitle {
+  font-size: 12px;
+  color: #7d8998;
+  margin-top: 4px;
+}
+
+/* Right Content - Form */
+.mock-razorpay-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+}
+
+.amount-display {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  text-align: right;
+}
+
+.amount-label {
+  display: block;
+  font-size: 13px;
+  color: #7d8998;
+  margin-bottom: 4px;
+}
+
+.amount-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0d1620;
+}
+
+.payment-form-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #0d1620;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  color: #556270;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dcdfe5;
+  border-radius: 4px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #3395ff;
+  box-shadow: 0 0 0 1px #3395ff;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.pay-button {
+  margin-top: 30px;
+  background-color: #3395ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(51, 149, 255, 0.3);
+}
+
+.pay-button:hover {
+  background-color: #2b7fd9;
+}
+
+.pay-button:active {
+  transform: translateY(1px);
+}
+
+.razorpay-footer {
+  margin-top: auto;
+  text-align: right;
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #5d6d7e;
+  font-size: 13px;
+}
+
+.razorpay-logo-text {
+  font-weight: 700;
+  color: #0d1620;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.mock-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9aa5b1;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.mock-close-btn:hover {
+  color: #3e4b5b;
+}
+
+/* Security footer strip */
+.security-footer {
+  margin-top: 40px;
+  border-top: 1px solid #f0f2f5;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-logos img {
+  height: 20px;
+  width: auto;
+  margin-right: 10px;
+  opacity: 0.8;
+}
+
+.pci-text {
+  font-size: 11px;
+  color: #9aa5b1;
+}

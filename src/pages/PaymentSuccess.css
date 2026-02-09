@@ -1,0 +1,315 @@
+/* High-End Payment Success - "Future Glass" Celebration */
+
+.payment-success-page {
+    /* Background handled by global mesh gradient */
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.payment-success-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+    animation: fadeInPage 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Success Header */
+.success-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Animated Checkmark */
+.success-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+    height: 100px;
+}
+
+.checkmark {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 3;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #10B981;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #10B981;
+    fill: none;
+    animation: stroke .6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke .3s cubic-bezier(0.65, 0, 0.45, 1) .8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 50px #10B981;
+    }
+}
+
+.success-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #10B981, #059669);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.success-message {
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+/* Floating Glass Receipt */
+.bill-details-section {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.5);
+
+    border-radius: 32px;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 60px;
+
+    position: relative;
+    /* Zigzag border effect at bottom could go here, keeping simple for glass look */
+}
+
+/* Receipt Hole Punch Effect */
+.bill-details-section::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bill-details-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+    color: var(--color-text-primary);
+}
+
+.bill-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bill-detail-row:last-child {
+    border-bottom: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.bill-detail-label {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.bill-detail-value {
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    font-weight: 700;
+    text-align: right;
+}
+
+.transaction-id {
+    font-family: 'Courier New', monospace;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+.amount-highlight {
+    font-size: 2rem;
+    color: #10B981;
+    font-weight: 800;
+}
+
+/* Actions */
+.receipt-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    flex-wrap: wrap;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Glass Buttons */
+.btn-glass-secondary,
+.btn-glass-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    min-width: 200px;
+    letter-spacing: 0.02em;
+}
+
+.btn-glass-secondary {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: var(--color-text-primary);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.btn-glass-secondary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-glass-secondary svg {
+    color: var(--color-text-secondary);
+}
+
+.btn-glass-primary {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+    box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+    min-width: 240px;
+    height: 60px;
+    font-size: 1.25rem;
+}
+
+.btn-glass-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.5);
+    background: linear-gradient(135deg, #34D399, #10B981);
+}
+
+.btn-glass-primary svg {
+    color: white;
+}
+
+/* Privacy Notice */
+.info-notice {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.info-notice p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bill-details-section {
+        padding: 40px 24px;
+        width: 100%;
+    }
+
+    .receipt-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-glass-secondary,
+    .btn-glass-primary {
+        width: 100%;
+    }
+
+    .success-icon-container {
+        height: 80px;
+    }
+
+    .checkmark {
+        width: 60px;
+        height: 60px;
+    }
+
+    .success-title {
+        font-size: 2.5rem;
+    }
+}

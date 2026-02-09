@@ -1,0 +1,183 @@
+/* Virtual Keyboard Styles */
+
+.virtual-keyboard-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Check if this was causing issues, but pointer-events: none on overlay helps */
+    z-index: 1000;
+    pointer-events: none;
+    /* Let clicks pass through overlay area */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align to bottom */
+}
+
+.virtual-keyboard-container {
+    pointer-events: auto;
+    background: rgba(20, 20, 30, 0.95);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px 24px 0 0;
+    width: 100%;
+    max-width: 100%;
+    /* Full width for kiosk feel */
+    height: 45vh;
+    /* Fixed height, roughly 45% of screen */
+    padding: 20px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.vk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.vk-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.vk-toggle-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.vk-toggle-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.vk-close-btn {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Numeric Grid */
+.vk-numeric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.vk-numeric-grid .vk-key {
+    aspect-ratio: 2/1;
+    /* Rectangular keys */
+}
+
+/* Alpha Container */
+.vk-alpha-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.vk-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.vk-row.bottom {
+    margin-top: 4px;
+}
+
+/* Key sizing for rows */
+.vk-alpha-container .vk-key {
+    width: 8.5%;
+    height: 50px;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.vk-shift-key {
+    width: 12% !important;
+    /* Slightly wider */
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.vk-shift-key.active {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    border-color: #3b82f6;
+}
+
+.vk-alpha-container .vk-action-key {
+    width: 12% !important;
+}
+
+.vk-alpha-container .vk-space-key {
+    width: 40% !important;
+}
+
+/* Key Styles */
+.vk-key {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vk-key:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0.95);
+}
+
+.vk-action-key {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.vk-space-key {
+    width: 200px;
+    aspect-ratio: auto;
+    padding: 12px;
+}

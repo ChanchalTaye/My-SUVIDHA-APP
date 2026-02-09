@@ -1,0 +1,110 @@
+/* Modern Card Component */
+
+.card {
+    background: white;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: var(--card-padding);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-info));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Card Variants */
+.card-hoverable {
+    cursor: pointer;
+}
+
+.card-hoverable:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.card-hoverable:active {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-active);
+}
+
+/* Card Padding Variants */
+.card-sm {
+    padding: var(--card-padding-sm);
+}
+
+.card-lg {
+    padding: var(--card-padding-lg);
+}
+
+/* Card with Gradient Border */
+.card-gradient-border {
+    border: 2px solid transparent;
+    background-image:
+        linear-gradient(white, white),
+        linear-gradient(135deg, var(--color-primary), var(--color-info));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* Card Elevation Levels */
+.card-flat {
+    box-shadow: none;
+    border: 1px solid var(--color-border);
+}
+
+.card-elevated {
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* Colored Cards */
+.card-primary {
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+    color: white;
+}
+
+.card-secondary {
+    background: linear-gradient(135deg, var(--color-secondary-light), var(--color-secondary));
+    color: white;
+}
+
+.card-accent {
+    background: linear-gradient(135deg, rgba(255, 143, 184, 0.2), rgba(255, 143, 184, 0.1));
+    border: 2px solid var(--color-accent);
+}
+
+/* Card with Image */
+.card-with-image {
+    padding: 0;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
+}
+
+.card-body {
+    padding: var(--card-padding);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        padding: var(--card-padding-sm);
+    }
+}

@@ -1,0 +1,188 @@
+/* Admin Login Styles - Matching Main Site */
+.admin-login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Match main site background */
+    background-color: #fafbfc;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.05) 0, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.05) 0, transparent 50%);
+    background-attachment: fixed;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.admin-login-page.keyboard-active {
+    align-items: flex-start;
+    padding-top: 5vh;
+}
+
+/* Back Button */
+.admin-back-btn {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.admin-back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(79, 70, 229, 0.2);
+    transform: translateX(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    color: #4f46e5;
+}
+
+.admin-back-btn:active {
+    transform: translateX(0);
+}
+
+.admin-login-card {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.admin-login-page.keyboard-active .admin-login-card {
+    transform: translateY(0);
+    /* Rely on flex-start padding */
+}
+
+.admin-login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.admin-logo-circle {
+    width: 60px;
+    height: 60px;
+    background: white; /* Changed to white for better logo contrast */
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-login-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-login-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #1f2937;
+}
+
+.admin-login-header p {
+    color: #4b5563;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    color: #374151;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: #1f2937;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.btn-admin-login {
+    width: 100%;
+    padding: 0.875rem;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-admin-login:not(:disabled):hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+}
+
+.btn-admin-login:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+    opacity: 0.6;
+}

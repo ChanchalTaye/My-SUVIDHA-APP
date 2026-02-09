@@ -1,0 +1,214 @@
+/* Porcelain Future Home - Compact & Clean */
+
+.home-page {
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.home-content {
+    max-width: 1200px;
+    /* Restored to standard width */
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    animation: fadeInPage 0.6s ease-out;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-title {
+    font-size: 2.25rem;
+    /* Balanced Headline */
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+.home-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+/* BALANCED GRID SYSTEM */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* significantly larger cards */
+    gap: 30px;
+    /* Spacious gap */
+    padding: 20px;
+}
+
+/* PRETTY GLASS CARDS */
+.service-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.02);
+
+    border-radius: 28px;
+    padding: 40px 30px;
+    /* Increased padding */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    min-height: 240px;
+    /* Increased height */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Subtle Color Tints per Service */
+.service-card-electricity {
+    --card-tint: rgba(245, 158, 11, 0.05);
+    --card-border: rgba(245, 158, 11, 0.3);
+}
+
+.service-card-gas {
+    --card-tint: rgba(239, 68, 68, 0.05);
+    --card-border: rgba(239, 68, 68, 0.3);
+}
+
+.service-card-water {
+    --card-tint: rgba(59, 130, 246, 0.05);
+    --card-border: rgba(59, 130, 246, 0.3);
+}
+
+.service-card-municipal {
+    --card-tint: rgba(139, 92, 246, 0.05);
+    --card-border: rgba(139, 92, 246, 0.3);
+}
+
+.service-card-help {
+    --card-tint: rgba(16, 185, 129, 0.05);
+    --card-border: rgba(16, 185, 129, 0.3);
+}
+
+/* Hover State */
+.service-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(180deg, #ffffff, var(--card-tint));
+    border-color: var(--card-border);
+    box-shadow:
+        0 20px 40px -5px rgba(0, 0, 0, 0.1),
+        0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* Icons */
+.service-icon {
+    font-size: 56px;
+    /* Larger icon to match card size */
+    margin-bottom: 20px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.service-icon-image {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+/* Titles - Balanced Size */
+.service-title {
+    font-size: 1.35rem;
+    /* Balanced size: Not huge, not tiny */
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .service-card {
+        min-height: 180px;
+        padding: 24px;
+    }
+
+    .service-icon {
+        font-size: 40px;
+    }
+
+    .service-icon-image {
+        width: 48px;
+        height: 48px;
+    }
+
+    .service-title {
+        font-size: 1.1rem;
+    }
+
+    .home-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Admin Access Button - Larger & More Visible */
+.admin-access-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    padding: 14px 24px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(79, 70, 229, 0.3);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4f46e5;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 12px rgba(79, 70, 229, 0.15);
+    z-index: 50;
+    opacity: 0.9;
+}
+
+.admin-access-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(79, 70, 229, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(79, 70, 229, 0.25);
+    color: #4338ca;
+}
+
+.admin-access-btn:active {
+    transform: translateY(-1px);
+}

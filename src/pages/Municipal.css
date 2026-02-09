@@ -1,0 +1,92 @@
+/* Modern Municipal Services Page */
+
+.municipal-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-background);
+}
+
+.municipal-content {
+    padding: var(--spacing-2xl) var(--spacing-xl);
+    overflow-y: auto;
+}
+
+.municipal-title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+}
+
+/* Modern Service Cards Grid */
+.municipal-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.municipal-service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    padding: var(--card-padding-lg);
+    text-align: center;
+    cursor: pointer;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-base);
+    background: white;
+}
+
+.municipal-service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.municipal-service-card:active {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow-active);
+}
+
+.municipal-icon {
+    font-size: 80px;
+    margin-bottom: var(--spacing-lg);
+    transition: transform var(--transition-base);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.municipal-service-card:hover .municipal-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.municipal-service-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.municipal-service-description {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .municipal-services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .municipal-service-card {
+        min-height: 200px;
+    }
+}

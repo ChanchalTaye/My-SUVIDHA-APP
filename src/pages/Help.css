@@ -1,0 +1,86 @@
+/* Modern Help Page Styles */
+
+.help-card-value {
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+.faq-section-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: var(--spacing-2xl);
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.faq-card-modern {
+    padding: 0 !important;
+    /* Reset default padding for collapsible */
+    background: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.faq-card-modern:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateX(4px);
+}
+
+.faq-details {
+    width: 100%;
+}
+
+.faq-summary {
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+    list-style: none;
+    /* Hide default triangle */
+}
+
+/* Hide default marker in Webkit */
+.faq-summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+    font-weight: 300;
+}
+
+.faq-details[open] .faq-toggle {
+    transform: rotate(45deg);
+    /* Turn + into x */
+}
+
+.faq-answer-modern {
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

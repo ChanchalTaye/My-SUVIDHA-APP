@@ -1,0 +1,333 @@
+/* High-End Complaint Page - Glass Form */
+
+.complaint-page {
+    /* Background handled by global mesh gradient */
+    min-height: 100vh;
+    padding-top: 120px;
+}
+
+.complaint-content {
+    padding: var(--spacing-xl);
+    animation: fadeInPage 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.complaint-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Glass Form Card - Expanded & Premium */
+.complaint-form-card {
+    max-width: 800px;
+    /* Spacious width */
+    margin: 0 auto;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.1),
+        0 10px 30px -5px rgba(0, 0, 0, 0.05);
+    border-radius: 40px;
+
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Glass Inputs */
+.form-group {
+    margin-bottom: 32px;
+}
+
+.form-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+    margin-left: 8px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 24px;
+    padding: 0 32px;
+    font-size: 1.25rem;
+    font-family: inherit;
+    color: var(--color-text-primary);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.form-input,
+.form-select {
+    height: 72px;
+    /* Taller inputs */
+    appearance: none;
+    /* Remove default arrow for custom styling if needed, but keeping simple for now */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234f46e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 24px center;
+    background-size: 20px;
+}
+
+.form-textarea {
+    padding-top: 24px;
+    min-height: 200px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow:
+        0 0 0 4px var(--color-primary-glow),
+        inset 0 2px 4px rgba(0, 0, 0, 0.02);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* File Upload - Styled Zone */
+.file-upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.file-input {
+    display: none;
+    /* Hide default input */
+}
+
+.file-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+    padding: 0 32px;
+    background: white;
+    border: 2px dashed rgba(79, 70, 229, 0.3);
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.file-label:hover {
+    background: rgba(79, 70, 229, 0.05);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* Category Selection - Modern Chips */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.category-option {
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.category-option:hover {
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.category-option.selected {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--color-primary), var(--grad-1));
+    color: white;
+    box-shadow: 0 10px 25px -5px var(--color-primary-glow);
+}
+
+/* Submit Button Override */
+.complaint-form-card .btn {
+    height: 72px;
+    /* Huge button */
+    font-size: 1.35rem;
+    border-radius: 100px;
+    margin-top: 20px;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+    box-shadow: 0 10px 30px -5px rgba(79, 70, 229, 0.4);
+}
+
+/* Success Card - Premium Centerpiece */
+.success-card {
+    max-width: 600px;
+    margin: 40px auto;
+
+    background: rgba(255, 255, 255, 0.85) !important;
+    /* Slightly more opaque */
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.5);
+    /* Inner border effect */
+    border-radius: 48px;
+
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.success-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    /* Emerald Green */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.5);
+}
+
+.success-icon {
+    font-size: 64px;
+    color: white;
+    line-height: 1;
+}
+
+.success-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.success-message {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* Ticket Display - Receipt Style */
+.ticket-display {
+    background: #f8fafc;
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 24px 40px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.ticket-label {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+}
+
+.ticket-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    font-family: monospace;
+    /* Ticket look */
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+}
+
+/* Success Button Override */
+.success-actions {
+    width: 100%;
+}
+
+.success-card .btn {
+    height: 72px;
+    font-size: 1.35rem;
+    border-radius: 100px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .complaint-form-card {
+        padding: 30px 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,8 @@
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    height: calc(100vh - 100px);
+    /* Adjust based on header height */
+    overflow-y: auto;
+}

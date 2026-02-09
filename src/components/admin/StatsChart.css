@@ -1,0 +1,99 @@
+.stats-chart {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    overflow: visible;
+}
+
+.chart-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.chart-line {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    animation: drawLine 1s ease-out forwards;
+}
+
+.chart-area {
+    animation: fadeInArea 1s ease-out forwards;
+}
+
+.chart-point {
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.chart-point-group:hover .chart-point {
+    opacity: 1;
+    r: 5;
+    stroke: white;
+    stroke-width: 2px;
+}
+
+.chart-bar {
+    opacity: 0.8;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    transform-origin: bottom;
+    animation: growBar 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.chart-bar:hover {
+    opacity: 1;
+    filter: brightness(1.2);
+    y: -2px;
+    /* Visual lift */
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.chart-labels span {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-align: center;
+    font-weight: 500;
+}
+
+@keyframes drawLine {
+    from {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeInArea {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growBar {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}

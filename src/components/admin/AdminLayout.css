@@ -1,0 +1,191 @@
+/* Admin Layout Styles */
+.admin-layout {
+    display: flex;
+    height: 100vh;
+    background: #f3f4f6;
+    color: #1f2937;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: 260px;
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+    z-index: 10;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.brand-text h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.brand-text span {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* Navigation */
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.nav-item:hover {
+    background: #f9fafb;
+    color: #111827;
+}
+
+.nav-item.active {
+    background: #eff6ff;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+
+
+.nav-label {
+    flex: 1;
+}
+
+
+
+/* User Mini Profile */
+.admin-user-mini {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f3f4f6;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user-info h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.user-info span {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* Main Content */
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f9fafb;
+}
+
+.admin-header {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.page-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.current-time {
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.btn-logout {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+/* Content Area */
+.admin-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
