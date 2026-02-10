@@ -23,9 +23,9 @@ export const SessionProvider = ({ children }) => {
     const [serviceRequests, setServiceRequests] = useState([]);
 
     const navigate = useNavigate();
-    // const timeoutIdRef = useRef(null);
-    // const warningTimeoutIdRef = useRef(null);
-    // const intervalIdRef = useRef(null);
+    const timeoutIdRef = useRef(null);
+    const warningTimeoutIdRef = useRef(null);
+    const intervalIdRef = useRef(null);
 
     const resetSession = useCallback(() => {
         setIsActive(false);

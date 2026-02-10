@@ -14,7 +14,7 @@ const VirtualKeyboard = ({ isVisible, onClose, onKeyPress, onDelete, defaultLayo
 
     if (!isVisible) return null;
 
-    // const numericKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    const numericKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
     const row1 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
     const row2 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
     const row3 = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];

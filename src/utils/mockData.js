@@ -241,12 +241,10 @@ export const complaintCategories = [
     { id: 'other', label: 'Other' }
 ];
 
-const mockData = {
+export default {
     generateBillData,
     generateTransactionId,
     generateComplaintTicketId,
     mockServiceInfo,
     complaintCategories
 };
-
-export default mockData;

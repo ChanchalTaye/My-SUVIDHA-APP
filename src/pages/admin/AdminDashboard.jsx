@@ -4,7 +4,7 @@ import StatsChart from '../../components/admin/StatsChart';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
-    const { stats, requests, recentPayments, addAlert } = useAdmin();
+    const { stats, requests, complaints, recentPayments, addAlert } = useAdmin();
     const toast = useToast();
 
     const handleQuickAction = (action) => {

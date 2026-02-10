@@ -8,7 +8,7 @@ import './ServiceRequestSuccess.css';
 const ServiceRequestSuccess = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    // const { t } = useLanguage();
+    const { t } = useLanguage();
 
     const request = location.state?.request;
 

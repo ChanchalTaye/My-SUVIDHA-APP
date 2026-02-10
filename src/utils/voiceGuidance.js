@@ -101,10 +101,8 @@ export const isSpeaking = () => {
     return false;
 };
 
-const voiceGuidance = {
+export default {
     speak,
     stopSpeaking,
     isSpeaking
 };
-
-export default voiceGuidance;

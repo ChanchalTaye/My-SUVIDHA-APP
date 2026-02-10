@@ -11,7 +11,7 @@ const StatsChart = ({ data, type = 'line', color = '#3b82f6', height = 150 }) =>
 
     const values = data.map(d => d.value || d.amount);
     const maxVal = Math.max(...values) * 1.2; // Add headroom
-    // const minVal = 0;
+    const minVal = 0;
 
     const width = 100; // ViewBox width percentage
     const stepX = width / (data.length - 1);
