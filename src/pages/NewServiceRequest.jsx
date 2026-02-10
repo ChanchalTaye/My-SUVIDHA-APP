@@ -13,7 +13,8 @@ const NewServiceRequest = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { addServiceRequest } = useSession();
-    const { t } = useLanguage();
+    // const { t } = useLanguage();
+    // const { t } = useLanguage();
 
     // Get service type from URL params or state
     const urlParams = new URLSearchParams(location.search);
@@ -137,9 +138,8 @@ const NewServiceRequest = () => {
             navigate('/service-request-success', { state: { request } });
         }
     };
-
     const renderProgressIndicator = () => {
-        const totalSteps = formData.serviceType ? 4 : 5;
+        // const totalSteps = formData.serviceType ? 4 : 5;
         const steps = formData.serviceType
             ? ['Details', 'Documents', 'Review']
             : ['Service', 'Details', 'Documents', 'Review'];

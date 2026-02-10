@@ -211,7 +211,7 @@ export const translations = {
 
     // Payments Monitor
     searchTransactions: "Search Transaction ID or Consumer...",
-    transactionId: "Transaction ID",
+    // transactionId: "Transaction ID", // Duplicate of line 95
     consumerId: "Consumer ID",
     amount: "Amount",
     time: "Time",

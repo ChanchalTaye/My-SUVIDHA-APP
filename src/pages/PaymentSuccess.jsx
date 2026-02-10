@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import Header from '../components/layout/Header';
-import Button from '../components/common/Button';
+// import Button from '../components/common/Button';
 import { generateTransactionId } from '../utils/mockData';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -15,7 +15,7 @@ const PaymentSuccess = () => {
     const [transactionId] = useState(generateTransactionId());
     const receiptRef = React.useRef(null);
 
-    const { billData, serviceType } = location.state || {};
+    const { billData } = location.state || {};
 
     useEffect(() => {
         if (!billData) {

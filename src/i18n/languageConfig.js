@@ -259,7 +259,7 @@ export const isValidActiveLanguage = (languageCode) => {
     return isLanguageActive(languageCode) && languageCode in allLanguages;
 };
 
-export default {
+const languageConfig = {
     allLanguages,
     activeLanguages,
     getActiveLanguages,
@@ -268,3 +268,5 @@ export default {
     getDefaultLanguage,
     isValidActiveLanguage
 };
+
+export default languageConfig;

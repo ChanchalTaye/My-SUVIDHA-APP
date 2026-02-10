@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { mockServiceRequests, mockComplaints } from '../utils/mockData';
+// import { mockServiceRequests, mockComplaints } from '../utils/mockData';
 
 const AdminContext = createContext();
 
@@ -18,7 +18,7 @@ export const AdminProvider = ({ children }) => {
     // Initialize with mock data
     const [requests, setRequests] = useState([]);
     const [complaints, setComplaints] = useState([]);
-    const [recentPayments, setRecentPayments] = useState([
+    const [recentPayments] = useState([
         { id: 'PAY-9012', consumerId: 'CONS-8829', service: 'Electricity', amount: 1450, status: 'Success', time: '10:42 AM' },
         { id: 'PAY-9011', consumerId: 'CONS-7731', service: 'Water', amount: 450, status: 'Success', time: '10:15 AM' },
         { id: 'PAY-9010', consumerId: 'CONS-9921', service: 'Gas', amount: 890, status: 'Failed', time: '09:55 AM' },

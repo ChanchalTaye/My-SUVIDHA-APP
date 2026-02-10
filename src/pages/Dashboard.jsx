@@ -9,7 +9,7 @@ import ServiceRequestCard from '../components/dashboard/ServiceRequestCard';
 import './Dashboard.css';
 
 const Dashboard = () => {
-    const { user, resetSession, serviceRequests } = useSession();
+    const { user, serviceRequests } = useSession();
     const { t } = useLanguage();
     const navigate = useNavigate();
     const [greeting, setGreeting] = useState('goodAfternoon');

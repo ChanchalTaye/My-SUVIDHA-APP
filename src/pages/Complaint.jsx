@@ -7,7 +7,7 @@ import BackButton from '../components/common/BackButton';
 import Card from '../components/layout/Card';
 import Button from '../components/common/Button';
 import VirtualKeyboard from '../components/common/VirtualKeyboard';
-import { generateComplaintTicketId, complaintCategories } from '../utils/mockData';
+import { generateComplaintTicketId } from '../utils/mockData';
 import './Complaint.css';
 
 const Complaint = () => {
